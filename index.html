@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Google Search Console 驗證碼 -->
     <meta name="google-site-verification" content="2p5YhlEZU-sKVIdyUDyjTVIAXOhmYypwxxxvYLiJKJ0" />
 
-    <!-- ================= SEO 優化標籤（已移除重複） ================= -->
     <title>日本代運轉運首選｜J-Wings 日翼物流：日本集運、公仔代運包稅免材積</title>
     <meta name="description" content="J-Wings 日翼物流提供日本東京秋葉原專業集運與代運服務。主打絕對包關稅、純磅重計費免材積費、免台灣國內派送費！無論是日本 Amazon、駿河屋的動漫公仔、美妝潮流或3C，皆能高效空運直發台灣，立即加入 LINE 客服諮詢。">
     <meta name="keywords" content="日翼物流, J-Wings, 日本集運, 日本代運, 秋葉原集運, 公仔代運, 日本轉運, 駿河屋代運, 包關稅集運">
     <meta name="author" content="J-Wings 日翼物流">
     <meta name="robots" content="index, follow">
 
-    <!-- ================= Google 結構化資料 (Schema) ================= -->
-    <!-- 補上這個現代 SEO 武器，精準告訴 Google 機器人你的在地商務型態 -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -36,8 +32,36 @@
       "description": "J-Wings 日翼物流提供專業的日本代運與集運服務，倉庫位於東京秋葉原，主打純磅重不收材積、全包關稅、免台灣派送費。"
     }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "日本代運禁運品有哪些？什麼東西不能寄？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "常見的日本網購禁運品包括：高壓氣體噴霧罐、易燃液體（如香水、指甲油）、鋰電池產品以及生鮮動植物。購買日本商品前若不確定，建議先將商品連結傳給 J-Wings LINE 客服免費評估。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "日本集運的運費怎麼算？什麼是材積重量？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "一般國際空運會依材積與實際重量取大者計費。但 J-Wings 日翼物流主打絕對不收材積費！一律採取純磅重計費，幫您省下不必要的材積費用。"
+        }
+      }, {
+        "@type": "Question",
+        "name": "使用日本轉運如果遇到台灣海關課稅，該怎麼處理？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "台灣海關規定每人每半年有 6 次免稅額度（單筆2,000元以下）。J-Wings 直接提供「絕對包關稅」服務，通關流程專人追蹤，不讓您被海關突然課稅。"
+        }
+      }]
+    }
+    </script>
     
-    <!-- 引入 Google 思源黑體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -49,11 +73,11 @@
             --soft-gold: #E9C46A; /* 質感金 */
             --line-green: #25D366; /* LINE 客服綠 */
             
-            /* 【質感底色關鍵】改用極具人文質感的日本暖燕麥白，取代死板的純白 */
+            /* 【質感底色關鍵】日本暖燕麥白 */
             --site-bg: #F9F6F0; 
             /* 卡片內部與區塊錯落層次用的微溫潤白 */
             --card-bg: #FFFFFF;
-            /* 輕盈的陰影，建立高級層次感 */
+            /* 輕盈的陰影 */
             --shadow-light: rgba(145, 158, 171, 0.12);
             --text-dark: #2B2D42;
         }
@@ -125,81 +149,216 @@
             transform: translateY(-1px);
         }
 
-        /* 第一屏：日系主視覺區 */
-        .hero {
-            background: linear-gradient(135px, rgba(12, 59, 100, 0.96), rgba(18, 35, 68, 0.94)), url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-            color: #fff;
+        /* ================= 全新滿版封面 CSS 樣式 ================= */
+        .hero-fullscreen {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 72px); /* 自動扣除導覽列高度，達成完美滿版 */
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #0A2540;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            transform: scale(1.02);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 90%;
+            max-width: 900px;
             text-align: center;
-            padding: 100px 20px;
-            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.1);
+            color: #ffffff;
+            padding: 20px;
         }
-        .hero h1 {
-            font-size: 2.6rem;
+
+        /* 呼吸發光標籤 */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            color: var(--soft-gold);
+        }
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-orange);
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            animation: pulse 1.6s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 107, 53, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 107, 53, 0); }
+        }
+
+        /* 大標題排版 */
+        .hero-title {
+            font-size: 3.2rem;
             font-weight: 900;
-            margin-bottom: 15px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            line-height: 1.3;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-        .hero p {
-            font-size: 1.25rem;
-            color: #E2E8F0;
-            margin-bottom: 35px;
-        }
-        .banner-badge {
+        .highlight-text {
+            color: #ffffff;
+            background: linear-gradient(120deg, var(--soft-gold) 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #E2E8F0;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            font-weight: 400;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        /* 仿 GoYuoTaTi 浮雕感推廣卡片 */
+        .hero-promo-card {
+            display: inline-block;
+            background: rgba(10, 37, 64, 0.45);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 20px 40px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        .promo-tag {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
             background: var(--accent-orange);
             color: white;
-            padding: 4px 15px;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-        .price-box {
-            background: rgba(255, 255, 255, 0.08);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            display: inline-block;
-            padding: 25px 50px;
-            border-radius: 12px;
-            margin-bottom: 35px;
-        }
-        .promo-price {
-            font-size: 2.5rem;
-            color: var(--soft-gold);
+            font-size: 0.75rem;
             font-weight: 900;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            padding: 2px 12px;
+            border-radius: 4px;
+            letter-spacing: 1px;
         }
-        .sub-currency {
-            font-size: 1.1rem;
+        .promo-main {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .price-num {
+            color: var(--soft-gold);
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin: 0 4px;
+        }
+        .promo-sub {
+            font-size: 0.88rem;
             color: #CBD5E1;
             margin-top: 5px;
         }
-        .cta-group {
+
+        /* 按鈕組優化 */
+        .hero-cta-group {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            font-size: 1.15rem;
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            font-size: 1.1rem;
             font-weight: 700;
             text-decoration: none;
-            border-radius: 8px;
-            transition: 0.2s;
+            border-radius: 50px;
+            transition: all 0.3s ease;
         }
-        .btn-main {
+        .btn-line {
             background-color: var(--line-green);
-            color: #fff;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            color: white;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
-        .btn-main:hover { background-color: #1eb952; transform: translateY(-2px); }
-        .btn-sub {
+        .btn-line:hover {
+            background-color: #1eb952;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+        }
+        .btn-explore {
             background-color: transparent;
-            color: #fff;
-            border: 2px solid #fff;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.6);
         }
-        .btn-sub:hover { background-color: rgba(255,255,255,0.1); }
+        .btn-explore:hover {
+            border-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* 下捲指示器 */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .scroll-indicator:hover { opacity: 1; }
+        .scroll-indicator .mouse {
+            width: 22px;
+            height: 36px;
+            border: 2px solid #ffffff;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            padding-top: 6px;
+        }
+        .scroll-indicator .wheel {
+            width: 4px;
+            height: 8px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            animation: scrollWheel 1.6s infinite;
+        }
+        @keyframes scrollWheel {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(10px); }
+        }
 
         /* 區塊共通標題 */
         .section-title {
@@ -216,7 +375,7 @@
             font-size: 1.05rem;
         }
 
-        /* 服務特點區：與質感底色錯落呈現 */
+        /* 服務特點區 */
         .features { background-color: var(--site-bg); }
         .feature-list {
             display: flex;
@@ -292,7 +451,7 @@
             text-align: left;
         }
 
-        /* 會員方案表格：提升閱讀質感 */
+        /* 會員方案表格 */
         .pricing-section { background-color: var(--site-bg); }
         .table-responsive {
             box-shadow: 0 10px 25px var(--shadow-light);
@@ -373,10 +532,16 @@
 
         /* 響應式手機優化 */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.9rem; }
-            .hero p { font-size: 1.1rem; }
-            .price-box { padding: 15px 25px; }
-            .promo-price { font-size: 1.8rem; }
+            .hero-fullscreen { height: calc(100vh - 60px); }
+            .hero-title { font-size: 2.1rem; }
+            .hero-subtitle { font-size: 0.95rem; }
+            .promo-main { font-size: 1.25rem; }
+            .price-num { font-size: 1.7rem; }
+            .hero-promo-card { padding: 15px 20px; width: 100%; }
+            .hero-btn { width: 100%; padding: 14px 25px; font-size: 1rem; }
+            .hero-cta-group { gap: 12px; }
+            .scroll-indicator { display: none; }
+            
             .steps-container { flex-direction: column; gap: 25px; }
             .step-card { width: 100%; }
             .price-table th, .price-table td { padding: 12px 8px; font-size: 0.88rem; }
@@ -388,7 +553,6 @@
 </head>
 <body>
 
-    <!-- 導覽列 -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-container">
@@ -399,27 +563,53 @@
         </div>
     </header>
 
-    <!-- 第一屏：主視覺 -->
-    <section class="hero">
-        <div class="container">
-            <span class="banner-badge">JAPAN TO TAIWAN</span>
-            <h1>日本代運轉運首選｜J-Wings 日翼物流</h1>
-            <p>日本東京秋葉原專業倉庫收發，空運直發台灣最安心</p>
-            
-            <div class="price-box">
-                <div style="text-decoration: line-through; opacity: 0.6; font-size: 1rem;">一般會員價：NT$250/kg</div>
-                <div class="promo-price">🔥 限時特價招生中 NT$200 / kg</div>
-                <div class="sub-currency">( 約折合日幣 1,250 円 )</div>
+    <section class="hero-fullscreen">
+        <div class="hero-bg" style="background-image: linear-gradient(to bottom, rgba(10, 37, 64, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%), url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&fit=crop&w=1920&q=80');"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span> TOKYO TO TAIWAN
             </div>
             
-            <div class="cta-group">
-                <a href="https://line.me/R/ti/p/%40116nwdlr" class="btn btn-main" target="_blank">💬 聯絡 LINE 官方客服</a>
-                <a href="#workflow" class="btn btn-sub">了解轉運流程</a>
+            <h1 class="hero-title">
+                日本代運轉運首選<br>
+                <span class="highlight-text">J-Wings 日翼物流</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                立足東京秋葉原，專業動漫公仔與電商集運團隊。<br>
+                空運直發、絕對包稅、零材積費，給您最完美的跨境體驗。
+            </p>
+            
+            <div class="hero-promo-card">
+                <div class="promo-tag">LIMITED OFFER</div>
+                <div class="promo-main">限時特價招生中 <span class="price-num">NT$ 200</span> / kg</div>
+                <div class="promo-sub">（約折合日幣 1,250 円，散客同享 VIP 級純磅重待遇）</div>
+            </div>
+            
+            <div class="hero-cta-group">
+                <a href="https://line.me/R/ti/p/%40116nwdlr" class="hero-btn btn-line" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE" style="width: 22px; height: 22px; margin-right: 8px;">
+                    立即聯絡 LINE 官方客服
+                </a>
+                <a href="#workflow" class="hero-btn btn-explore">
+                    探索轉運流程
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left: 6px; transform: translateY(1px);"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
             </div>
         </div>
+
+        <a href="#workflow" class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+            </div>
+        </a>
     </section>
 
-    <!-- 第二屏：優勢特點 -->
     <section class="features">
         <div class="container">
             <h2 class="section-title">J-Wings 的三大安心承諾</h2>
@@ -442,7 +632,6 @@
         </div>
     </section>
 
-    <!-- 第三屏：轉運流程圖 -->
     <section class="steps-section" id="workflow">
         <div class="container">
             <h2 class="section-title">簡單 4 步驟，輕鬆將日本商品寄回台</h2>
@@ -473,7 +662,6 @@
         </div>
     </section>
 
-    <!-- 第四屏：會員方案表格 -->
     <section class="pricing-section">
         <div class="container">
             <h2 class="section-title">💎 會員等級與專屬費率</h2>
@@ -520,8 +708,7 @@
         </div>
     </section>
 
-    <!-- 第五屏：禁運品規範 -->
-    <section class="container" style="padding-top: 0;">
+    <section class="container" style="padding-bottom: 0;">
         <div class="warning-section">
             <h3>⚠️ 跨境航空運輸——常見禁運物品提醒</h3>
             <p style="margin-bottom: 15px; font-size: 0.95rem;">為了確保航班安全與合法通關，以下物品「無法」受理代運，購買前請務必留意：</p>
@@ -537,9 +724,36 @@
         </div>
     </section>
 
-    <!-- 第六屏：關於與秋葉原據點 -->
+    <section class="container" style="padding-top: 50px; padding-bottom: 40px;">
+        <h2 class="section-title">💡 常見日本集運問題 FAQ</h2>
+        <p class="section-subtitle">第一次使用日本代運轉運？我們為您整理了最常見的熱門痛點解答</p>
+        
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 6px 15px var(--shadow-light); border-left: 5px solid var(--accent-orange);">
+                <h3 style="color: var(--primary-blue); font-size: 1.25rem; margin-bottom: 12px; font-weight: 700;">Q1：日本代運禁運品有哪些？什麼東西不能寄？</h3>
+                <p style="color: #4B5563; line-height: 1.8; font-size: 0.95rem;">
+                    常見的日本網購禁運品包括：高壓氣體噴霧罐（如防曬噴霧、空氣清淨劑）、易燃液體（如香水、指甲油、部分高濃度酒類）、鋰電池產品（單獨寄送的行動電源）以及生鮮動植物。購買日本動漫公仔、駿河屋周邊、藥妝或電器前，若不確定是否為禁運品，建議先將商品連結傳給 <strong>J-Wings LINE 客服</strong>，我們將為您免費人工評估。
+                </p>
+            </div>
+
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 6px 15px var(--shadow-light); border-left: 5px solid var(--primary-blue);">
+                <h3 style="color: var(--primary-blue); font-size: 1.25rem; margin-bottom: 12px; font-weight: 700;">Q2：日本集運的運費怎麼算？什麼是材積重量？</h3>
+                <p style="color: #4B5563; line-height: 1.8; font-size: 0.95rem;">
+                    一般國際空運會依據「實際重量」與「材積重量（長×寬×高÷6000）」兩者取大者計費。但 <strong>J-Wings 日翼物流主打「絕對不收材積費」</strong>！不論是多大箱的動漫公仔、輕量大件包裹，我們一律採取純磅重計費，倉庫團隊還會提供精細包裝服務，幫您用最划算的費率把日本戰利品安全運回台。
+                </p>
+            </div>
+
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 12px; box-shadow: 0 6px 15px var(--shadow-light); border-left: 5px solid var(--soft-gold);">
+                <h3 style="color: var(--primary-blue); font-size: 1.25rem; margin-bottom: 12px; font-weight: 700;">Q3：使用日本轉運如果遇到台灣海關課稅，該怎麼處理？</h3>
+                <p style="color: #4B5563; line-height: 1.8; font-size: 0.95rem;">
+                    根據台灣海關規定，每人每半年有 6 次進口包裹免稅額度（每筆完稅價格新台幣 2,000 元以下），超過則會被課徵進口稅與營業稅。為了讓買家與代購賣家更省心，<strong>J-Wings 直接提供「絕對包關稅」承諾</strong>，通關流程皆有專人追蹤處理，不讓您被突然課稅，完美控管網購與進口成本！
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section class="about-section">
-        <div class="container" style="padding-top: 0;">
+        <div class="container" style="padding-top: 20px;">
             <h2 class="section-title">立足動漫與電商聖地：日本東京秋葉原</h2>
             <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
                 <div style="flex: 1; min-width: 300px;">
@@ -554,7 +768,6 @@
         </div>
     </section>
 
-    <!-- 頁尾 -->
     <footer>
         <div class="container" style="padding: 0;">
             <p>專業、透明、迅速！開啟您的日本動漫與電商無縫購物體驗</p>
